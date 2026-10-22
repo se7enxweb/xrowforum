@@ -2,8 +2,7 @@
 //
 // SOFTWARE NAME: xrowForum
 // SOFTWARE RELEASE: 1.0.0
-// BUILD VERSION: 1
-// COPYRIGHT NOTICE: Copyright (C) 2010 xrow GmbH
+// COPYRIGHT NOTICE: Copyright (C) 2010 - 2011 xrow GmbH, Copyright (C) 1998 - 2026 7x
 // SOFTWARE LICENSE: GNU General Public License v2.0
 // NOTICE: >
 //   This program is free software; you can redistribute it and/or
@@ -22,14 +21,15 @@
 //
 //
 
-class xrowForumInfo
+class xrowforumInfo
 {
-    static function info()
+    public static function info()
     {
         return array( 'Name' => 'xrowForum',
                       'Version' => '1.0.0',
-                      'Copyright' => 'Copyright (C) 2010 xrow GmbH',
+                      'Copyright' => 'Copyright (C) 2010 - 2011 xrow GmbH, Copyright (C) 1998 - 2026 7x',
                       'License' => 'GNU General Public License v2.0',
+                      'Info_url' => 'https://github.com/se7enxweb/xrowforum'
                       );
     }
 }

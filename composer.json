@@ -1,0 +1,42 @@
+{
+    "name": "se7enxweb/xrowforum",
+    "description": "Forum and private messaging for Exponential: unread flags, moderators per forum, user ranks, BB code editor, smilies, censoring, forum statistics and an admin tab to configure it all.",
+    "type": "ezpublish-legacy-extension",
+    "keywords": [
+        "exponential",
+        "exponential-extension",
+        "ezpublish-legacy",
+        "forum",
+        "community",
+        "private-messages",
+        "bbcode",
+        "moderation"
+    ],
+    "homepage": "https://github.com/se7enxweb/xrowforum",
+    "license": "GPL-2.0-only",
+    "authors": [
+        {
+            "name": "xrow GmbH",
+            "homepage": "https://www.xrow.com",
+            "role": "Original author"
+        },
+        {
+            "name": "7x",
+            "email": "info@se7enx.com",
+            "homepage": "https://se7enx.com",
+            "role": "Maintainer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/se7enxweb/xrowforum/issues",
+        "source": "https://github.com/se7enxweb/xrowforum"
+    },
+    "require": {
+        "php": ">=8.0",
+        "se7enxweb/exponential-legacy-installer": "^2.0"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "xrowforum",
+        "installer-name": "xrowforum"
+    }
+}
