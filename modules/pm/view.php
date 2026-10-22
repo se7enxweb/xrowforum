@@ -9,7 +9,7 @@ $Module = $Params['Module'];
 $http = eZHTTPTool::instance();
 $user = eZUser::currentUser();
 $namedParameters = $Module->NamedParameters;
-$msg_id = $namedParameters['messageID'];
+$msg_id = (int)$namedParameters['messageID'];
 $path_text = "Inbox";
 $path_url = "inbox";
 

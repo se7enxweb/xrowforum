@@ -48,7 +48,7 @@ if (!$http->hasPostVariable( 'recipient_name' ) AND $namedParameters['RecipientI
 {
 	if ($namedParameters['ReplyID'])
 	{
-		$reply_id = $namedParameters['ReplyID'];
+		$reply_id = (int)$namedParameters['ReplyID'];
 		$reply_msg = $db->arrayQuery("SELECT * FROM xrowforum_pm_messages where msg_id = $reply_id");
 		if(strrpos( $reply_msg[0]['pm_subject'] , "re:") !== false)
 		{

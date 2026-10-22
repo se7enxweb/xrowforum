@@ -109,7 +109,7 @@ if ( ($Module->isCurrentAction('NetworkAction') OR $http->hasPostVariable( 'reci
 			{
 				$check_user = false;
 			}
-			$recipient_obj_id = $namedParameters['RelatedUserID'];
+			$recipient_obj_id = (int)$namedParameters['RelatedUserID'];
 			$tpl->setVariable( 'action_type', $action_type );
 		}
 		$block_check = $db->arrayQuery("SELECT count(*) as 'count' FROM xrowforum_pm_network where (user1 = $current_user->ContentObjectID AND user2 = $recipient_obj_id OR user1 = $recipient_obj_id AND user2 = $current_user->ContentObjectID ) AND state = 2;");
@@ -237,7 +237,7 @@ if ($Module->isCurrentAction('ConfirmFriend'))
 {	
 	if( $http->hasPostVariable( 'requester' ) AND trim($http->PostVariable( 'requester' )) != "")
 	{
-		$requester = $http->PostVariable( 'requester' );
+		$requester = (int)$http->PostVariable( 'requester' );
 		$db->begin();
 		$db->arrayQuery("UPDATE xrowforum_pm_network SET state = '1' where user2 = $user_id and user1 = $requester and state = 0;");
 		$db->commit();
@@ -297,7 +297,7 @@ if ($Module->isCurrentAction('RejectFriend'))
 {	
 	if( $http->hasPostVariable( 'requester' ) AND trim($http->PostVariable( 'requester' )) != "")
 	{
-		$requester = $http->PostVariable( 'requester' );
+		$requester = (int)$http->PostVariable( 'requester' );
 		$db->begin();
 		$db->arrayQuery("DELETE FROM xrowforum_pm_network where user2 = $user_id and user1 = $requester and state = 0;");
 		$db->commit();
@@ -357,7 +357,7 @@ if ($Module->isCurrentAction('RemoveBlock'))
 {	
 	if( $http->hasPostVariable( 'block_to' ) AND trim($http->PostVariable( 'block_to' )) != "")
 	{
-		$blocked_user = $http->PostVariable( 'block_to' );
+		$blocked_user = (int)$http->PostVariable( 'block_to' );
 		$db->begin();
 		$db->arrayQuery("DELETE FROM xrowforum_pm_network where user1 = $user_id and user2 = $blocked_user and state = 2;");
 		$db->commit();
@@ -377,7 +377,7 @@ if ($Module->isCurrentAction('RemoveFriend'))
 {	
 	if( $http->hasPostVariable( 'friend' ) AND trim($http->PostVariable( 'friend' )) != "")
 	{
-		$friend = $http->PostVariable( 'friend' );
+		$friend = (int)$http->PostVariable( 'friend' );
 		$db->begin();
 		$db->arrayQuery("DELETE FROM xrowforum_pm_network where (user1 = $user_id and user2 = $friend) OR (user1 = $friend and user2 = $user_id) AND state = 1;");
 		$db->commit();

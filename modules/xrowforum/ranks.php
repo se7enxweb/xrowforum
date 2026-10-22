@@ -12,7 +12,7 @@ $success = false;
 
 if( $http->hasPostVariable( "rank_switch" ))
 {
-	$url_number = $http->PostVariable( "rank_switch");
+	$url_number = (int)$http->PostVariable( "rank_switch");
     $old_content = $db->arrayQuery("SELECT active FROM xrowforum_rank WHERE rank_index = '$url_number';");
     $old_value = $old_content[0]['active'];
     if ($old_value == 1)
@@ -31,7 +31,7 @@ if( $http->hasPostVariable( "rank_switch" ))
 
 if( $http->hasPostVariable( "delete_rank" ))
 {
-	$del_object = $http->postVariable( "delete_rank" );
+	$del_object = (int)$http->postVariable( "delete_rank" );
     $db->begin();        
     $db->arrayQuery("DELETE FROM xrowforum_rank WHERE rank_index='$del_object';");
     $db->commit();
@@ -41,7 +41,7 @@ if( $http->hasPostVariable( "CreateNewRank" ))
 {
         if ($http->hasPostVariable( "rank_text" ) AND trim( $http->postVariable( "rank_text" ) ) != "")
         {
-            $rank_text = $http->PostVariable( "rank_text" );
+            $rank_text = $db->escapeString( $http->PostVariable( "rank_text" ) );
             $tpl->setVariable( 'rank_text', $rank_text );
         }
         else
@@ -49,12 +49,12 @@ if( $http->hasPostVariable( "CreateNewRank" ))
             array_push($error, "Please select a Rank Text");
         }
         
-        $rank_category = $http->PostVariable( "rank_category" );
+        $rank_category = $db->escapeString( $http->PostVariable( "rank_category" ) );
         $tpl->setVariable( 'rank_category', $rank_category );
         
         if ($http->hasPostVariable( "rank_condition" ) AND is_numeric($http->postVariable( "rank_condition" )))
         {
-            $rank_condition = $http->PostVariable( "rank_condition" );
+            $rank_condition = (int)$http->PostVariable( "rank_condition" );
             $tpl->setVariable( 'rank_condition', $rank_condition );
         }
         else

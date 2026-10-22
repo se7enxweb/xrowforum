@@ -13,7 +13,7 @@ $current_user = eZUser::currentUser();
 $current_user_id = $current_user->ContentObjectID;
 $xrowForumINI = eZINI::instance( 'xrowforum.ini' );
 $what = $namedParameters['type'];
-$where = $namedParameters['where'];
+$where = in_array( $namedParameters['where'], array( 'inbox', 'outbox' ) ) ? $namedParameters['where'] : false;
 
 if($what == "remove")
 {
@@ -23,7 +23,7 @@ if($what == "remove")
 		{
 			if ($http->hasPostVariable( 'where' ))
 			{
-				$where = $http->PostVariable( 'where' );
+				$where = ( $http->PostVariable( 'where' ) == 'outbox' ) ? 'outbox' : 'inbox';
 			}
 			else
 			{
@@ -36,6 +36,7 @@ if($what == "remove")
 			foreach( $selected_messages as $sel_msg)
 			{
 				$db->begin();
+				$sel_msg = (int)$sel_msg;
 				$db->arrayQuery("DELETE FROM xrowforum_pm_messages where msg_id = $sel_msg and owner_id = $current_user_id;");
 				$db->commit();
 				$Module->redirectTo( '/pm/' . $where );
@@ -44,7 +45,7 @@ if($what == "remove")
 	}
 	else
 	{
-		$msg_id = $namedParameters['messageID'];
+		$msg_id = (int)$namedParameters['messageID'];
 		if (!$msg_id)
 		{
 			return $Module->handleError( 1, 'kernel' );
@@ -56,7 +57,7 @@ if($what == "remove")
 			{
 				if ($http->hasPostVariable( 'where' ))
 				{
-					$where = $http->PostVariable( 'where' );
+					$where = ( $http->PostVariable( 'where' ) == 'outbox' ) ? 'outbox' : 'inbox';
 				}
 				else
 				{

@@ -11,7 +11,7 @@ $tpl = eZTemplate::factory();
 
 if($Params['UserParameters']['offset'])
 {
-	$offset = $Params['UserParameters']['offset'];
+	$offset = (int)$Params['UserParameters']['offset'];
 }
 else
 {
@@ -19,7 +19,7 @@ else
 }
 if($namedParameters['sorting'])
 {
-	$sorting = $namedParameters['sorting'];
+	$sorting = in_array( $namedParameters['sorting'], array( 'send_date', 'pm_subject', 'sender', 'recipient', 'read_state' ) ) ? $namedParameters['sorting'] : 'send_date';
 }
 else
 {
@@ -27,7 +27,7 @@ else
 }
 if($namedParameters['direction'])
 {
-	$direction = $namedParameters['direction'];
+	$direction = ( strtolower( $namedParameters['direction'] ) == 'asc' ) ? 'asc' : 'desc';
 	$tpl->setVariable( 'direction', $direction );
 }
 else
