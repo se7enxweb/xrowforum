@@ -4,7 +4,7 @@
 class PmMarkAsRead
 {
 
-    function PmMarkAsRead()
+    function __construct()
     {
         $this->Operators = array( 'pm_mark_as_read' );
     }

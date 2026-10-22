@@ -168,7 +168,7 @@ class HTML_BBCodeParser
     * @access   public
     * @author   Stijn de Reede  <sjr@gmx.co.uk>
     */
-    function HTML_BBCodeParser($options = array())
+    function __construct($options = array())
     {
 
         /* set the already set options */

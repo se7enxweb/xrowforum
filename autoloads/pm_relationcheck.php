@@ -4,7 +4,7 @@
 class PmRelationCheck
 {
 
-    function PmRelationCheck()
+    function __construct()
     {
         $this->Operators = array( 'pm_relation_fetch', 'pm_is_inRelation' );
     }

@@ -4,7 +4,7 @@ class updateAfterPublishType extends eZWorkflowEventType
 {
     const WORKFLOW_TYPE_STRING = 'updateafterpublish';
     
-    function updateAfterPublishType()
+    function __construct()
     {
         $this->eZWorkflowEventType( updateAfterPublishType::WORKFLOW_TYPE_STRING, ezpI18n::tr( 'extension/xrowforum', 'Update modified TS' ) );
         $this->setTriggerTypes( array( 'content' => array( 'publish' => array ( 'after' ) ) ) );

@@ -4,7 +4,7 @@
 class Censoring
 {
 
-    function Censoring()
+    function __construct()
     {
         $this->Operators = array( 'censoring' );
     }

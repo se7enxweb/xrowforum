@@ -4,7 +4,7 @@ class flagAfterPublishType extends eZWorkflowEventType
 {
     const WORKFLOW_TYPE_STRING = 'flagafterpublish';
     
-    function flagAfterPublishType()
+    function __construct()
     {
         $this->eZWorkflowEventType( flagAfterPublishType::WORKFLOW_TYPE_STRING, ezpI18n::tr( 'extension/xrowforum', 'Flag' ) );
         $this->setTriggerTypes( array( 'content' => array( 'publish' => array ( 'after' ) ) ) );

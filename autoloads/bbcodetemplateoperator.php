@@ -17,7 +17,7 @@ class BBCodeTemplateOperator
 {
 	/*!
 	*/
-	function BBCodeTemplateOperator()
+	function __construct()
 	{
 		$this->Operators = array( 'bbcode2xhtml', 'xhtml2bbcode' );
 	} // function BBCodeTemplateOperator()

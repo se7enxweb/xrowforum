@@ -7,7 +7,7 @@ class eZBirthdayType extends eZDataType
     const BIRTHDAY_DEFAULT_EMTPY = 0;
     const BIRTHDAY_DEFAULT_CURRENT_DATE = 1;
 
-    function eZBirthdayType()
+    function __construct()
     {
         $this->eZDataType( self::DATA_TYPE_STRING, ezpI18n::tr( 'kernel/classes/datatypes', "Birthday", 'Datatype name' ),
                            array( 'serialize_supported' => true ) );

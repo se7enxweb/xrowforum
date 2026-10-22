@@ -4,7 +4,7 @@ class setSessionBeforePublishType extends eZWorkflowEventType
 {
     const WORKFLOW_TYPE_STRING = 'setsessionbeforepublish';
     
-    function setSessionBeforePublishType()
+    function __construct()
     {
         $this->eZWorkflowEventType( setSessionBeforePublishType::WORKFLOW_TYPE_STRING, ezpI18n::tr( 'extension/xrowforum', 'set Session' ) );
         $this->setTriggerTypes( array( 'content' => array( 'publish' => array ( 'before' ) ) ) );

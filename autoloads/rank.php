@@ -4,7 +4,7 @@
 class requestUserRank
 {
 
-    function requestUserRank()
+    function __construct()
     {
         $this->Operators = array( 'request_rank' );
     }

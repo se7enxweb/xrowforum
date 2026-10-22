@@ -4,7 +4,7 @@
 class OperatorMerge
 {
 
-    function OperatorMerge()
+    function __construct()
     {
         $this->Operators = array( 'operator_merge' );
     }

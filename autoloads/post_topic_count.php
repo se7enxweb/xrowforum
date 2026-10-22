@@ -4,7 +4,7 @@
 class ObjectByIDOperator
 {
 
-    function ObjectByIDOperator()
+    function __construct()
     {
         $this->Operators = array( 'object_by_id' );
     }

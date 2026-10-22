@@ -4,7 +4,7 @@ class deflagAfterReadType extends eZWorkflowEventType
 {
     const WORKFLOW_TYPE_STRING = 'deflagafterread';
 	
-    function deflagAfterReadType()
+    function __construct()
 	{
 		$this->eZWorkflowEventType( deflagAfterReadType::WORKFLOW_TYPE_STRING, ezpI18n::tr( 'extension/xrowforum', 'Deflag' ) );
         $this->setTriggerTypes( array( 'content' => array( 'read' => array ( 'before' ) ) ) );

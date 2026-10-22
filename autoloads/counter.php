@@ -4,7 +4,7 @@
 class topicViewCounter
 {
 
-    function topicViewCounter()
+    function __construct()
     {
         $this->Operators = array( 'read_count', 'write_count'  );
     }

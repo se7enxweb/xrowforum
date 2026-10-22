@@ -4,7 +4,7 @@
 class deflagSubtree
 {
 
-    function deflagSubtree()
+    function __construct()
     {
         $this->Operators = array( 'deflag_subtree'  );
     }

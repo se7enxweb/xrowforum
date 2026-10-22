@@ -4,7 +4,7 @@
 class getNewPosts
 {
 
-    function getNewPosts()
+    function __construct()
     {
         $this->Operators = array( 'like_operator'  );
     }

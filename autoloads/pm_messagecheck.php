@@ -4,7 +4,7 @@
 class PmMessageCheck
 {
 
-    function PmMessageCheck()
+    function __construct()
     {
         $this->Operators = array( 'pm_message_check' );
     }
