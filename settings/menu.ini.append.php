@@ -7,6 +7,9 @@ Part[ezxrownav]=xrowForum
 Tabs[]=xrowForum
 
 [Topmenu_xrowForum]
+# Icon - (optional) the name of an icon admin4 draws before the tab's name: a name of design.ini
+#        [AdminDesignSettings] IconList[] (Bootstrap Icons); a name it does not know draws no icon.
+Icon=chat-square-text
 NavigationPartIdentifier=ezxrownav
 Name=xrowForum
 Tooltip=Forum Preferences
